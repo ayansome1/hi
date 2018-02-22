@@ -52,9 +52,33 @@ let getAllHi = (req, res) => {
 
 };
 
+let getAllUsers = (req, res) => {
+
+  let userId = req.user.user_id;
+
+  let params = [];
+
+  let connection = mysql.createConnection(connInfo);
+  let query = "select email,name from users where user_id != ?;";
+  params.push(userId);
+  let sql = connection.query(query, params, function (err, results) {
+
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+
+  });
+  console.log(sql.sql);
+  connection.end();
+
+};
+
 
 
 module.exports = {
   newHi,
-  getAllHi
+  getAllHi,
+  getAllUsers
 };
