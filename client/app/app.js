@@ -1,7 +1,7 @@
 'use strict';
 /*global angular,noty*/
 
-var app = angular.module('hiApp', ['ui.router','ngAnimate','ui.bootstrap','ngTouch']);
+var app = angular.module('hiApp', ['ui.router','ngAnimate','ui.bootstrap','ngTouch','angularMoment']);
 
 app.run(['$rootScope', 'session', function ($rootScope, session) {
 

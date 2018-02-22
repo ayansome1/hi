@@ -6,11 +6,12 @@ angular.module('hiApp')
 
 		$scope.user = session.getUser().name;
 
-		function getUsers(){
+		let  getUsers = () => {
 
 			$http.get(baseUrl + "/users").then(function (response) {
 				
 				console.log(response.data);
+				$scope.users=response.data;
 			})
 			.catch(function () {
 				$scope.showError("Unable to fetch other users");
@@ -24,6 +25,37 @@ angular.module('hiApp')
 		};
 
 		getUsers();
+
+		$scope.sayHi = () => {
+
+				$http.post(baseUrl + "/new-hi", {
+					sendTo: $scope.recipient
+				}).then(function () {
+					$scope.showSuccess("Successfully sent Hi");
+					// getAllPatients();
+				}).catch(function () {
+					$scope.showError("Unable to send Hi");
+				// }).finally(function () {
+				// 	$scope.savingPatient = false;
+				});
+
+		};
+
+		let getAllHi = () => {
+
+			$http.get(baseUrl + "/all-hi").then(function (response) {
+				
+				console.log(response.data);
+				$scope.messages = response.data;
+				// $scope.users=response.data;
+			})
+			.catch(function () {
+				$scope.showError("Unable to fetch all received Hi");
+			 });
+
+		};
+
+		getAllHi();
 
 		
 		
