@@ -1,0 +1,121 @@
+<style>
+.patients>.active {
+    background-color: #E0E0E0;
+}
+</style>
+<div class="container-fluid" data-ng-controller="homeController">
+<!--     <div class="col-xs-12 col-md-5 col-lg-4 margin-bottom-20">
+        <button class="btn btn-primary btn-outline btn-sm pull-left margin-bottom-15" ng-click="openPatientModal('NEW')">
+            New patient
+        </button>
+        <input type="text" class="form-control" placeholder="Search patient" ng-model="searchTerm">
+        <div class="col-xs-12 margin-top-10 padding-0 vertical-scroll patients white-background" style="height:700px;">
+            <div class="cursor-pointer padding-0" ng-click="highlightPatient(patient)" ng-repeat="patient in patients | filter : searchTerm" ng-class="{'active':patient.patientId === selectedPatient.patientId}">
+                <div class="col-xs-12 padding-10 margin-top-10 margin-bottom-10">
+                    <div class="col-xs-12">
+                        Id: <span class="font-bold">{{patient.patientId}}</span>
+                    </div>
+                    <div class="col-xs-12">
+                        Name: <span class="font-bold">{{patient.name}}</span>
+                    </div>
+                    <div class="col-xs-12">
+                        Gender: <span class="font-bold">{{getGenderInFull(patient.gender)}}</span>
+                    </div>
+                </div>
+                <hr class="custom-hr-no-margin margin-0">
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-7 col-lg-8">
+        <div class="col-xs-12 padding-20 white-background">
+            <div class="top-right-of-parent">
+                <button class="btn btn-sm btn-default" ng-click="openPatientModal('EDIT')">
+                    Edit
+                </button>
+            </div>
+            <div class="col-xs-12 margin-bottom-10">
+                <div class="label-sm">
+                    Patient name
+                </div>
+                <span class="font-bold">
+                 {{selectedPatient.name}}
+                </span>
+            </div>
+            <div class="col-xs-12 margin-bottom-10">
+                <div class="label-sm">
+                    Age
+                </div>
+                <span>
+                    {{selectedPatient.age}} years
+                </span>
+            </div>
+            <div class="col-xs-12">
+                <div class="label-sm">
+                    Gender
+                </div>
+                <span>
+                    {{getGenderInFull(selectedPatient.gender)}}
+                </span>
+            </div>
+            <div class="col-xs-12 paffing-left-0" ng-if="selectedPatient.reports">
+                <div class="col-xs-12 font-bold font-120 margin-top-30 margin-bottom-10 padding-left-0">
+                    Past reports
+                </div>
+                <div class="col-xs-12">
+                    <div class="col-xs-12 col-sm-4 margin-bottom-20" ng-repeat="it in selectedPatient.reports | orderBy : 'scannumber'">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-info btn-xs btn-icon mr5" ng-click="getEcgFile(it.fileid)"> <i class="fa fa-cloud-download"></i> <span>ECG file</span> </button>
+                        </div>
+                        <div class="col-xs-12">
+                            {{it.reportid}}
+                        </div>
+                        <div class="col-xs-12">
+                            {{it.processingdate | date}}
+                        </div>
+                        <div class="col-xs-12">
+                            #{{it.scannumber}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 margin-top-20 padding-20 white-background">
+            <div class="col-xs-12 font-bold font-120">
+                Upload ECG data
+            </div>
+            <div class="col-xs-12 margin-top-20 child-div-center">
+                <div class="col-xs-4 padding-left-0">
+                    Indications
+                </div>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="Enter patient indications" ng-model="newEcg.indications">
+                </div>
+            </div>
+            <div class="col-xs-12 margin-top-10 child-div-center">
+                <div class="col-xs-4 padding-left-0">
+                    Medications
+                </div>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" placeholder="Enter medications given to patient" ng-model="newEcg.medications">
+                </div>
+            </div>
+            <div class="col-xs-12 margin-top-10 child-div-center">
+                <div class="col-xs-4 padding-left-0">
+                    Recording date
+                </div>
+                <div class="col-xs-8">
+                    <input type="date" class="form-control" ng-model="newEcg.recordingDate">
+                </div>
+            </div>
+            <div class="col-xs-12 margin-top-30 child-div-center">
+                <div class="col-xs-4 padding-left-0">ECG XML file</div>
+                <div class="col-xs-8">
+                    <input type="file" file-model="customVar.file">
+                </div>
+            </div>
+            <button class="btn btn-md btn-primary btn-outline pull-right margin-top-30" ng-click="saveAndProcessEcgData()" ng-disabled="processingEcg">
+                Save and process
+            </button>
+        </div>
+    </div> -->
+</div>

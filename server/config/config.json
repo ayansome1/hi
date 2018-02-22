@@ -1,0 +1,15 @@
+{
+	"sqlconn": {
+		"host": "127.0.0.1",
+		"user": "root",
+		"password": "root",
+		"database": "hi"
+	},
+	"hi": {
+		"port": 9075,
+		"corsorigin": "http://localhost"
+	},
+	"salt": "TrIn0nw=nA",
+	"emailVerificationPassword": "ncjhvhfvbhvgbh09vnrj*//kook9",
+	"emailVerificationAlgo": "aes-256-ctr"
+}

@@ -1,0 +1,16 @@
+<div class="centered" data-ng-controller="signupController">
+    <ng-form class="form-horizontal" name="signUpForm">
+        <div class="form-group has-feedback margin-bottom-30" ng-class="{'has-error':signUpForm.name.$invalid,'has-success':signUpForm.name.$valid}">
+            <input class="form-control " placeholder="Enter your name..." ng-model="user.name" name="name" required>
+        </div>
+        <div class="form-group has-feedback margin-bottom-30" ng-class="{'has-error':signUpForm.email.$invalid,'has-success':signUpForm.email.$valid}">
+            <input class="form-control" placeholder="Enter email id..." ng-model="user.email" name="email" email-validation required>
+        </div>
+        <div class="form-group has-feedback margin-bottom-30" ng-class="{'has-error':signUpForm.password.$invalid,'has-success':signUpForm.password.$valid}">
+            <input class="form-control" type="password" placeholder="Enter password..." name="password" ng-model="user.password" required>
+        </div>
+        <button class="btn btn-default pull-right margin-top-30" ng-click="signup()" ng-disabled="signUpForm.$invalid">Sign up</button>
+    </ng-form>
+    <a class="col-xs-12 text-right font-90 margin-top-20" ng-click="gotoLoginPage()">Already a user?Log in</a>
+
+</div>
