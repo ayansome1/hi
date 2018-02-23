@@ -9,8 +9,16 @@
         <div class="form-group has-feedback margin-bottom-30" ng-class="{'has-error':signUpForm.password.$invalid,'has-success':signUpForm.password.$valid}">
             <input class="form-control" type="password" placeholder="Enter password..." name="password" ng-model="user.password" required>
         </div>
-        <button class="btn btn-default pull-right margin-top-30" ng-click="signup()" ng-disabled="signUpForm.$invalid">Sign up</button>
+
+        <div class="form-group has-feedback margin-bottom-30" ng-class="{'has-error':user.password !== password2,'has-success':user.password === password2}">
+            <input class="form-control" type="password" placeholder="Reenter password..." ng-model="password2">
+            <span class="text-danger" ng-show="password2 && user.password !== password2">
+                The passwords don't match
+            </span>
+        </div>
+
+        <button class="btn btn-default pull-right margin-top-30" ng-click="signup()" ng-disabled="signUpForm.$invalid || (user.password !== password2)">Sign up</button>
     </ng-form>
-    <a class="col-xs-12 text-right font-90 margin-top-20" ng-click="gotoLoginPage()">Already a user?Log in</a>
+    <a class="col-xs-12 text-right font-90 margin-top-20 text-danger" ng-click="gotoLoginPage()">Already a user? <b>Log in</b></a>
 
 </div>

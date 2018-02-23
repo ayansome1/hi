@@ -9,7 +9,10 @@
         </button>
     </div>
     <div class="col-xs-12 col-sm-8">
-        <table class="table">
+        <div class="col-xs-12 text-danger text-center margin-top-30 " ng-show="messages.length===0">
+            You have not got any Hi message yet
+        </div>
+        <table class="table" ng-show="messages.length > 0">
             <thead>
                 <tr>
                     <th>Id</th>

@@ -9,7 +9,5 @@
 		"port": 9075,
 		"corsorigin": "http://localhost"
 	},
-	"salt": "TrIn0nw=nA",
-	"emailVerificationPassword": "ncjhvhfvbhvgbh09vnrj*//kook9",
-	"emailVerificationAlgo": "aes-256-ctr"
+	"salt": "TrIn0nw=nA"
 }

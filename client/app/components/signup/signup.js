@@ -19,7 +19,7 @@ angular.module('hiApp')
 				$state.go('app.home');
 			}).catch(function (response) {
 				if (response.status === 409) {
-					$scope.showError("Username already exists");
+					$scope.showError("Email already exists");
 				} else {
 					$scope.showError("Unable to sign up.Please try again");
 				}
