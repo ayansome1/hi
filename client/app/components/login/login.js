@@ -7,7 +7,6 @@ angular.module('hiApp')
 		$scope.login = function () {
 			$http.post(baseUrl + "/login", $scope.user).then(function (response) {
 				$scope.showSuccess("Login successful");
-				console.log(response.data.user);
 				session.setUser(response.data.user);
 				session.setAccessToken(response.data.accessToken);
 
